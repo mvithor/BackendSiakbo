@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const { createClient } = require('@supabase/supabase-js');
+const helmet = require('helmet')
 
 const dotenv = require('dotenv');
 const cors = require('cors');
@@ -26,13 +27,9 @@ const profileRoutes = require('./routes/profileRoutes');
 const loginRoutes = require('./routes/login');
 const konselorRoutes = require('./routes/konselorRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
-const pelanggaranRoutes = require('./routes/pelanggaranRoutes');
-const konselingRoutes = require('./routes/konselingRoutes');
 const PrestasiMadrasahRoutes = require('./routes/prestasiMadrasahRoutes');
 const PrestasiIndividuRoutes = require('./routes/prestasiIndividuRoutes');
 const usersRoutes = require('./routes/usersRoutes');
-const layananKonselingRoutes = require('./routes/layananKonselingRoutes');
-const adminPelanggaranRoutes = require('./routes/adminPelanggaranRoutes');
 const optionRoutes = require('./routes/tingkatanJuaraRoutes');
 const reguRoutes = require('./routes/reguRoutes');
 const prestasiReguRoutes = require('./routes/prestasiReguRoutes');
@@ -54,8 +51,11 @@ const catatanKonselingRoutes = require('./routes/dashboardSiswa/catatanKonseling
 // Inisialisasi cors 
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 
+
+
 // Inisialisasi Body Parser
 app.use(express.json());
+app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
@@ -65,9 +65,6 @@ app.use('/profile', profileRoutes);
 app.use('/dashboard', dashboardRoutes);
 app.use('/students', studentRoutes);
 app.use('/konselor', konselorRoutes);
-app.use('/pelanggaran', pelanggaranRoutes);
-app.use('/konseling', konselingRoutes);
-app.use('/layanan-Konseling', layananKonselingRoutes);
 app.use('/auth', loginRoutes);
 app.use('/users', usersRoutes);
 app.use('/prestasi-madrasah', PrestasiMadrasahRoutes);
@@ -86,9 +83,6 @@ app.use('/status-keluarga', statusKeluargaRoutes);
 app.use('/wali-siswa', waliSiswaRoutes);
 app.use('/konsultasi-wali-siswa', konsultasiWaliSiswaRoutes);
 
-
-//Routing Pelanggaran
-app.use('/admin', adminPelanggaranRoutes)
 
 // Routing Dashboard Siswa
 app.use('/prestasi-siswa', prestasiIndividuSiswaRoutes)
