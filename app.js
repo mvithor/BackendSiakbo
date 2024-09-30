@@ -40,6 +40,11 @@ const bimbinganRoutes = require('./routes/bimbinganRoutes');
 const konselingIndividuRoutes = require('./routes/dashboardSiswa/konselingIndividuRoutes');
 const rekapKonselingIndividuRoutes = require('./routes/rekapKonselingRoutes');
 const waliKelasRoutes = require('./routes/waliKelasRoutes');
+const kategoriPoinRoutes = require('./routes/kategoriPoinRoutes');
+const poinRoutes = require('./routes/poinRoutes');
+const statusKeluargaRoutes = require('./routes/statusKeluargaRoutes');
+const waliSiswaRoutes = require('./routes/waliSiswaRoutes');
+const konsultasiWaliSiswaRoutes = require('./routes/dashboardWaliSiswa/konsultasiRoutes')
 
 
 // Router Dashboard Siswa
@@ -75,6 +80,13 @@ app.use('/konseling-individu', konselingIndividuRoutes);
 app.use('/catatan-konseling', catatanKonselingRoutes);
 app.use('/rekap-konseling-individu', rekapKonselingIndividuRoutes);
 app.use('/wali-kelas', waliKelasRoutes);
+app.use('/poin', poinRoutes);
+app.use('/kategori-poin', kategoriPoinRoutes);
+app.use('/status-keluarga', statusKeluargaRoutes);
+app.use('/wali-siswa', waliSiswaRoutes);
+app.use('/konsultasi-wali-siswa', konsultasiWaliSiswaRoutes);
+
+
 //Routing Pelanggaran
 app.use('/admin', adminPelanggaranRoutes)
 
