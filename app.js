@@ -88,7 +88,7 @@ app.use('/konsultasi-wali-siswa', konsultasiWaliSiswaRoutes);
 app.use('/prestasi-siswa', prestasiIndividuSiswaRoutes)
 
 // Run Servers
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server berjalan di localhost: ${PORT}`);
 });
 
