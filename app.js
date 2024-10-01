@@ -49,7 +49,7 @@ const prestasiIndividuSiswaRoutes = require('./routes/dashboardSiswa/prestasiInd
 const catatanKonselingRoutes = require('./routes/dashboardSiswa/catatanKonselingRoutes')
 
 // Inisialisasi cors 
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: 'https://66fb62c30406178a1a7d6678--siabko.netlify.app' }));
 
 
 
