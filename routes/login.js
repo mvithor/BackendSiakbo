@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { Register, Login,  Logout}  = require('../controller/Users');
-const { registerWaliSiswa } = require('../controller/WaliSiswaController')
+const { registerWaliSiswa } = require('../controller/waliSiswaController')
 const router = Router();
 
 
