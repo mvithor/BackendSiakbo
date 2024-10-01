@@ -3,7 +3,7 @@ const { getWaliSiswa,
         getStatusKeluarga,
         getWaliSiswaById,
         updateWaliSiswa
-      } = require('../controller/WaliSiswaController');
+      } = require('../controller/waliSiswaController');
 const { verifyToken, verifyRole } = require('../middleware/verify');
 const router = Router();
 
